@@ -1,0 +1,47 @@
+1. La Déclaration de Fonction (Function Declaration)
+C'est la méthode traditionnelle et la plus commune pour créer une fonction.
+
+Particularités :
+   Le Hoisting (Levage) : C'est sa caractéristique majeure. Ces fonctions sont chargées en mémoire par l'interpréteur avant l'exécution du code. Vous pouvez donc l'appeler avant sa ligne de définition dans le fichier.
+
+   Le mot-clé this : À l'intérieur de la fonction, this dépend de la manière dont la fonction est appelée (en mode strict, il vaut undefined par défaut ; dans un objet, il pointe vers l'objet).
+
+2. L'Expression de Fonction (Function Expression)
+Ici, on crée une fonction (souvent anonyme) et on l'assigne à une variable.
+
+Particularités :
+   Pas de Hoisting : Contrairement à la déclaration, vous ne pouvez pas appeler cette fonction avant de l'avoir définie, car la variable (surtout avec let ou const) n'est pas encore initialisée.
+
+   Elle est utile pour passer des fonctions comme arguments à d'autres fonctions (callbacks).
+
+3. La Fonction Fléchée (Arrow Function)
+Introduite avec ES6, c'est une syntaxe moderne et ultra-compacte.
+
+Particularités :
+   Syntaxe courte : Si la fonction ne prend qu'un seul argument, on peut enlever les parenthèses. Si elle ne contient qu'une seule ligne, on peut enlever les accolades {} et le mot-clé return (le retour est implicite).
+
+   Pas de this propre : C'est sa plus grande particularité. Elle capture le this de son contexte lexical (le code qui l'entoure). Elle est donc idéale pour les méthodes à l'intérieur de timers (setTimeout) ou d'écouteurs d'événements, mais à éviter comme méthode d'objet ou comme constructeur.
+
+4. La Fonction Anonyme Immédiatement Invoquée (IIFE)
+Une IIFE (Immediately Invoked Function Expression) est une fonction qui s'exécute dès qu'elle est définie.
+
+Particularités :
+   Isolation du scope : Elle permet de créer un scope local temporaire pour éviter de polluer le scope global avec des variables.
+
+   Très utilisée historiquement avant l'arrivée des modules JavaScript modernes.
+
+5. La Fonction Génératrice (Generator Function)
+Une fonction spéciale qui peut être l'interrompue puis reprise au même endroit plus tard. Elle est reconnaissable à son astérisque *.
+
+Elle ne retourne pas une valeur directement, mais un objet itérateur.
+
+Le mot-clé yield permet de mettre en pause l'exécution de la fonction et de renvoyer une valeur. L'appel à .next() relance la fonction jusqu'au prochain yield.
+
+6. La Fonction Asynchrone (async / await)
+Conçue pour simplifier la gestion des promesses et du code asynchrone, elle se comporte visuellement comme du code synchrone.
+
+Particularités :
+
+Une fonction précédée du mot-clé async renvoie toujours une Promesse (Promise).
+
+Elle permet d'utiliser le mot-clé await à l'intérieur, qui met l'exécution en pause jusqu'à ce que la promesse soit résolue (sans bloquer le reste du navigateur).

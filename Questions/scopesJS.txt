@@ -1,0 +1,24 @@
+1. Le Scope Global (Global Scope)
+Une variable déclarée en dehors de toute fonction ou bloc se trouve dans le scope global. Elle est accessible de partout dans votre script.
+
+Caractéristiques : 
+   Accessible partout (dans les fonctions, les boucles, etc.).
+   En mode navigateur, les variables globales déclarées avec var deviennent des propriétés de l'objet window.
+
+2. Le Scope de Fonction (Function Scope)
+Chaque fonction crée son propre scope. Les variables déclarées à l'intérieur d'une fonction ne sont accessibles qu'à l'intérieur de celle-ci.
+
+Caractéristiques :
+   Les variables sont locales à la fonction.
+   Elles sont créées au moment de l'appel de la fonction et détruites à la fin de son exécution.
+
+3. Le Scope de Bloc (Block Scope)
+Introduit avec ES6, ce scope restreint la visibilité des variables à l'intérieur d'un bloc de code (tout ce qui se trouve entre deux accolades { }), comme dans un if, for, while, etc.
+
+Caractéristiques :
+   Le mot-clé var ne respecte pas le scope de bloc. Une variable var dans un if s'échappera du bloc et se comportera comme si elle était dans le scope de la fonction parente (c'est ce qu'on appelle le hoisting / levage).
+
+4. Le Scope Lexical (Lexical Scope)
+Le scope lexical (ou statique) n'est pas un outil de déclaration, mais une règle de fonctionnement en JavaScript. Cela signifie que la position d'une variable dans le code source détermine son scope.
+
+Une fonction interne aura toujours accès aux variables de la fonction parente (externe), peu importe où la fonction interne est appelée. C'est la base du concept des Closures (fermetures).
