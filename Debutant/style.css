@@ -1,4 +1,26 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
 .btn{
-    background-color: aqua;
+    background-color: none;
     font-weight: 700;
+    padding: 1em;
+    border-radius: 25%;
+    font-size: 14px;
+    border-color: yellow;
+}
+p{
+    align-items: center;
+    width: 30%; 
+    background-color: beige; 
+    border-radius: 10%; 
+    padding: 2em; 
+    margin: 1em;
+    text-align: center;
 }

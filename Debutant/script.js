@@ -6,11 +6,18 @@ const btn_move=document.getElementById('btn2');
 const image=document.getElementById('image');
 
 
-paragraphe1.innerHTML='Welcome to children';
-first_btn.style.backgroundColor= 'yellow';
-title.innerHTML='CONNECTED';
-paragraphe2.style.backgroundColor='green';
 
+first_btn.addEventListener('click',()=>{
+    if (paragraphe1.innerHTML != 'Welcome to children' && first_btn.style.backgroundColor != 'yellow' && title.innerHTML !=' CONNECTED') {
+        paragraphe1.innerHTML='Welcome to children';
+        first_btn.style.backgroundColor= 'violet';
+        title.innerHTML='CONNECTED';
+    }else{
+        paragraphe1.innerHTML='Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptates reiciendis tempora tempore ipsum ratione nobis provident labore placeat quas, vero iure cum. Quibusdam neque temporibus reiciendis beatae architecto soluta.';
+        first_btn.style.backgroundColor='skyblue';
+        title.innerHTML='DISCONNECTED';
+    }
+})
 btn_move.addEventListener('click', ()=>{
     event.preventDefault;
     if (paragraphe2.style.fontWeight=='800' && image.src != 'boro.jpeg') {

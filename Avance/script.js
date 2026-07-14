@@ -46,7 +46,7 @@ function valideur(e){
     }
     if(age.validity.valueMissing || age.value<=0){
         e.preventDefault();
-        infosbull3.textContent='age manquant veuillez verifier votre age';
+        infosbull3.textContent='veuillez verifier votre age';
         infosbull3.style.color='red'
     }
 }

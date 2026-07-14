@@ -2,6 +2,7 @@
 const name=document.getElementById('name');
 const button=document.getElementById('btn');
 const addbtn=document.getElementById('add');
+const msg=document.getElementById('msg');
 const delbtn=document.getElementById('remove');
 
 const list_element=[];
@@ -28,10 +29,9 @@ button.addEventListener('click',()=>{
 }) 
 
 //===========DEUXIEME QUESTION========
-list_element.forEach((li) => {
-    myliste.innerHTML +=`<li id="li">${li.name}</li>`;
-});
+
 addbtn.addEventListener('click',()=>{
+    msg.style.display='none';
     event.preventDefault;
     let item=document.createElement('li');
     item.textContent=`Element ${elementindex}`;
@@ -40,18 +40,30 @@ addbtn.addEventListener('click',()=>{
 })
 delbtn.addEventListener('click',()=>{
     const lastitem=myliste.lastElementChild;
-    if (lastitem) {
+    if (lastitem && myliste.innerHTML != "") {
         lastitem.remove();
+    }
+    else{
+        msg.style.display='block';
     }
 })
 
 
-//===================================TROIXIEME
+//==============================TROIXIEME
 const btnToggle = document.getElementById('btn-toggle');
 btnToggle.addEventListener('click', () => {
     btnToggle.classList.toggle('active');
 });
 
 btnShow.addEventListener('click', () => {
-    elementMystere.classList.remove('hidden');
+    if (btnShow.innerHTML == "Show text") {
+        elementMystere.classList.remove('hidden');
+        btnShow.innerHTML="Hide text";
+    }
+    else if(btnShow.innerHTML == "Hide text"){
+        elementMystere.classList.add('hidden');
+        btnShow.innerHTML="Show text";
+    }else{
+        console.error("Erreur");
+    }
 });
