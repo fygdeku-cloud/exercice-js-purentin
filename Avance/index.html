@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avance</title>
+</head>
+<body>
+    <h2>Question 1</h2>
+    <form action="">
+        <label for="nom">Nom</label>
+        <input type="text" id="nm" placeholder="votre nom" required><span id="infos2"></span><br>
+        <label for="pnom">Prenom</label>
+        <input type="text" id="pnm" placeholder="votre prenom" required><span id="infos"></span><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="nom@gmail.com" required><span id="infos4"></span><br>
+        <label for="age">Age</label>
+        <input type="number" id="ag" placeholder="***" required><span id="infos3"></span><br>
+        <input type="submit" value="envoyer" id="vald">
+    </form>
+    <br><br>
+    <h2 class="title">Question 2 (Partie 1 : Compteur)</h2>
+    <p>Valeur actuelle : <span id="counter-value">0</span></p>
+    <button id="btn-increment">Incrémenter</button>
+
+    <h2 class="title">Question 2 (Partie 2 : Galerie d'images)</h2>
+    <div class="gallery-container" style="text-align: center; max-width: 300px;">
+        <img id="gallery-img" src="assets/images/image1.png" alt="Galerie" style="width:100%; height: auto; border-radius: 8px;">
+        <br><br>
+        <button id="btn-prev">⬅️ Précédent</button>
+        <button id="btn-next">Suivant ➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

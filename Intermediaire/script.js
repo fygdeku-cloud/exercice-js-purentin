@@ -3,23 +3,13 @@ const name=document.getElementById('name');
 const button=document.getElementById('btn');
 const addbtn=document.getElementById('add');
 const delbtn=document.getElementById('remove');
-const item=document.createElement('li');
 
-const list_element=[
-    {
-    'id':1,
-    'name':'Element'
-    },
-    {'id':2,
-    'name':'Element'
-    },
-    {
-    'id':2,
-    'name':'Element'
-    },
-];
+const list_element=[];
 const myliste=document.getElementById('list');
+let elementindex=1;
 
+const btnShow = document.getElementById('btn-show');
+const elementMystere = document.getElementById('element-mystere');
 
 name.addEventListener('input',()=>{
     if (name.value.trim() !=="") {
@@ -39,9 +29,29 @@ button.addEventListener('click',()=>{
 
 //===========DEUXIEME QUESTION========
 list_element.forEach((li) => {
-    myliste.innerHTML +=`<li>${li.name}</li>`;
+    myliste.innerHTML +=`<li id="li">${li.name}</li>`;
 });
 addbtn.addEventListener('click',()=>{
-    item.textContent='Element';
-     list_element.appendChild(item);
+    event.preventDefault;
+    let item=document.createElement('li');
+    item.textContent=`Element ${elementindex}`;
+    document.getElementById('list').appendChild(item);
+    elementindex ++ ;
 })
+delbtn.addEventListener('click',()=>{
+    const lastitem=myliste.lastElementChild;
+    if (lastitem) {
+        lastitem.remove();
+    }
+})
+
+
+//===================================TROIXIEME
+const btnToggle = document.getElementById('btn-toggle');
+btnToggle.addEventListener('click', () => {
+    btnToggle.classList.toggle('active');
+});
+
+btnShow.addEventListener('click', () => {
+    elementMystere.classList.remove('hidden');
+});

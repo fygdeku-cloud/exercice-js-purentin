@@ -15,10 +15,10 @@ btn_move.addEventListener('click', ()=>{
     event.preventDefault;
     if (paragraphe2.style.fontWeight=='800' && image.src != 'boro.jpeg') {
         paragraphe2.style.fontWeight='100';
-        image.src='boro.jpeg';
+        image.src='assets/images/boro.jpeg';
     }
     else{
         paragraphe2.style.fontWeight='800';
-        image.src='apt.jpeg';
+        image.src='assets/images/apt.jpeg';
     }
 })
